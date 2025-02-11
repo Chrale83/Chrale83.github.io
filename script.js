@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Hämta navbar från extern fil
   fetch("Navbar.html")
     .then((response) => response.text())
     .then((data) => {
