@@ -1,0 +1,16 @@
+.navbarListCustom {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    background-color: #afaca9 !important;
+}
+
+.navbarHeaderCustom {
+    font-family: 'Bangers', sans-serif;
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Bangers', sans-serif;
+    font-size: 22px;
+    
+}
+

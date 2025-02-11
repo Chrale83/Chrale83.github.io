@@ -1,0 +1,12 @@
+h1 {
+    font-family: 'Bangers', sans-serif;
+    font-weight: 900;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #7f8ba4 !important; /* Exempel på en ljusgrå bakgrundsfärg */
+  }
