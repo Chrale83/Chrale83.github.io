@@ -6,3 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Error loading navbar:", error));
 });
+
+document.querySelectorAll(".dropdown-item").forEach((item) => {
+  item.addEventListener("click", function () {
+    let countPeople = this.getAttribute("data-value");
+    console.log(countPeople);
+  });
+});
