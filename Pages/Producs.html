@@ -108,16 +108,14 @@
                     class="form-check-input"
                     type="checkbox"
                     value=""
-                    id="flexCheckDefault"
+                    id="CheckedExtraParachute"
                   />
                   <label
                     class="form-check-label d-flex align-items-center"
-                    for="flexCheckChecked"
+                    for="CheckedExtraParachute"
                   >
                     <strong>Extra fallskärm</strong>
-                    <span id="parachutePrice" class="ms-2 text-muted"
-                      >850 kr</span
-                    >
+                    <span id="parachutePrice" class="ms-2 text-muted"></span>
                   </label>
                 </div>
                 <div class="form-check">
@@ -125,17 +123,16 @@
                     class="form-check-input"
                     type="checkbox"
                     value=""
-                    id="flexCheckChecked"
-                    checked
+                    id="checkedCoffe"
                   />
 
                   <label
                     class="form-check-label d-flex align-items-center"
-                    for="flexCheckChecked"
+                    for="checkedCoffe"
                   >
                     <strong>Kaffe och fika </strong>
                     <span class="ms-2"><em>(efter hoppet)</em></span>
-                    <span id="coffePrice" class="ms-2 text-muted">50 kr</span>
+                    <span id="coffePrice" class="ms-2 text-muted"></span>
                   </label>
                 </div>
                 <div class="form-check">
@@ -143,19 +140,21 @@
                     class="form-check-input"
                     type="checkbox"
                     value=""
-                    id="flexCheckChecked"
-                    checked
+                    id="checkedInsurance"
                   />
 
                   <label
                     class="form-check-label d-flex align-items-center"
-                    for="flexCheckChecked"
+                    for="checkedInsurance"
                   >
                     <strong>Livförsäkring</strong>
                     <span id="insurancePrice" class="ms-2 text-success"></span>
                     <span class="ms-2 small">kr</span>
                   </label>
                 </div>
+              </div>
+              <div class="d-flex container border">
+                <label>Total Cost: <span id="totalPackagePrice"></span></label>
               </div>
               <div class="modal-footer">
                 <button
