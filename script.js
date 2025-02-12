@@ -15,6 +15,21 @@ const insurancePrice = 10;
 
 let totalPackagePrice = 0;
 
+let isExtraParachuteChecked = document.getElementById("CheckedExtraParachute");
+let isCoffeChecked = document.getElementById("checkedCoffe");
+let isInsuranceChecked = document.getElementById("checkedInsurance");
+let totalPackackePriceElement = document.getElementById("totalPackagePrice");
+let cancelAirPackage = document.getElementById("cancelAirPackage");
+let chooseAirPackage = document.getElementById("chooseAirPackage");
+
+chooseAirPackage.addEventListener("click", function () {
+  totalPackackePriceElement.textContent = totalPackagePrice;
+});
+
+cancelAirPackage.addEventListener("click", function () {
+  clearInputs();
+});
+
 document.querySelectorAll(".dropdown-item").forEach((item) => {
   item.addEventListener("click", function () {
     countPeople = parseInt(this.getAttribute("data-value"));
@@ -23,13 +38,17 @@ document.querySelectorAll(".dropdown-item").forEach((item) => {
     SetCoffePrice();
     SetLifeunsurancePrice();
     SetExtraParachutePrice();
+    totalPackagePrice = AirPlanePackagePrice * countPeople;
   });
 });
 
-let isExtraParachuteChecked = document.getElementById("CheckedExtraParachute");
-let isCoffeChecked = document.getElementById("checkedCoffe");
-let isInsuranceChecked = document.getElementById("checkedInsurance");
-let totalPackackePriceElement = document.getElementById("totalPackagePrice");
+function clearInputs() {
+  countPeople = 1;
+  totalPackagePrice = AirPlanePackagePrice;
+  isExtraParachuteChecked.checked = false;
+  isCoffeChecked.checked = false;
+  isInsuranceChecked.checked = false;
+}
 
 isExtraParachuteChecked.addEventListener("change", function () {
   if (isExtraParachuteChecked.checked) {
@@ -38,7 +57,7 @@ isExtraParachuteChecked.addEventListener("change", function () {
     totalPackagePrice -= parachutePrice * countPeople;
   }
 
-  totalPackackePriceElement.textContent = totalPackagePrice + " kr";
+  totalPackackePriceElement.textContent = totalPackagePrice;
 });
 
 isCoffeChecked.addEventListener("change", function () {
