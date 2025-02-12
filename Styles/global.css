@@ -1,6 +1,6 @@
 h1 {
     font-family: 'Bangers', sans-serif;
-    font-weight: 900;
+    font-weight: 600;
 }
 
 p {
@@ -10,3 +10,12 @@ p {
 body {
     background-color: #7f8ba4 !important; /* Exempel på en ljusgrå bakgrundsfärg */
   }
+
+.customHeadFont {
+    font-family: 'Bangers', sans-serif;
+    font-weight: 600;
+}
+
+.customFontText {
+    font-family: 'Roboto', sans-serif;
+}
