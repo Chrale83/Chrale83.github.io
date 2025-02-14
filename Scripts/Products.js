@@ -1,5 +1,5 @@
 let countPeople = 1;
-const AirPlanePackagePrice = 1250;
+const AirPlanePackagePrice = 1000;
 const coffePrice = 10;
 const parachutePrice = 10;
 const insurancePrice = 10;
@@ -11,9 +11,9 @@ let isCoffeChecked = document.getElementById("checkedCoffe");
 let isInsuranceChecked = document.getElementById("checkedInsurance");
 let totalPackagePriceElement = document.getElementById("totalPackagePrice");
 let cancelAirPackage = document.getElementById("cancelAirPackage");
-let chooseAirPackage = document.getElementById("chooseAirPackage");
+let selectAirPackage = document.getElementById("selectAirPackage");
 
-chooseAirPackage.addEventListener("click", function () {
+selectAirPackage.addEventListener("click", function () {
   totalPackagePriceElement.textContent = totalPackagePrice;
 });
 
@@ -26,6 +26,8 @@ document.querySelectorAll(".dropdown-item").forEach((item) => {
     countPeople = parseInt(this.getAttribute("data-value"));
     ChangePassangerAmount(countPeople);
     console.log(countPeople);
+
+    document.getElementById("selectAirPackage").disabled = false;
 
     SetCoffePrice();
     SetLifeunsurancePrice();
@@ -40,7 +42,9 @@ function ChangePassangerAmount(chosenAmountPeople) {
 }
 
 function clearInputs() {
-  countPeople = 1;
+  document.getElementById("selectAirPackage").disabled = true;
+  ChangePassangerAmount(null);
+  countPeople = null;
   totalPackagePrice = AirPlanePackagePrice;
   isExtraParachuteChecked.checked = false;
   isCoffeChecked.checked = false;
