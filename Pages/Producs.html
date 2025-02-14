@@ -23,13 +23,14 @@
           <div class="card" style="width: 18rem">
             <img src="" class="card-img-top" alt="..." />
             <div class="card-body">
-              <div class="d-flex">
-                <h5 class="card-title">Flygplans paketet</h5>
-                <span id="packagePrice" class="ms-3">1250kr </span><em>p/p</em>
-              </div>
+              <h5 class="card-title">Flygplans paketet</h5>
+
               <p class="card-text">
-                Välj detta om du vill hoppa från ett flygplan
+                Välj detta om du vill hoppa från ett flygplan... Classic
               </p>
+              <div class="d-flex justify-content-start">
+                <span id="packagePrice" class="ms-auto">1250kr p/p</span>
+              </div>
               <div class="d-flex">
                 <div class="dropdown">
                   <button
@@ -63,6 +64,7 @@
                   </ul>
                 </div>
                 <button
+                  id="chooseAirPackage"
                   type="button"
                   class="btn btn-primary ms-2 w-100"
                   data-bs-toggle="modal"
@@ -107,16 +109,14 @@
                     class="form-check-input"
                     type="checkbox"
                     value=""
-                    id="flexCheckDefault"
+                    id="CheckedExtraParachute"
                   />
                   <label
                     class="form-check-label d-flex align-items-center"
-                    for="flexCheckChecked"
+                    for="CheckedExtraParachute"
                   >
                     <strong>Extra fallskärm</strong>
-                    <span id="parachutePrice" class="ms-2 text-muted"
-                      >850 kr</span
-                    >
+                    <span id="parachutePrice" class="ms-2 text-muted"></span>
                   </label>
                 </div>
                 <div class="form-check">
@@ -124,17 +124,16 @@
                     class="form-check-input"
                     type="checkbox"
                     value=""
-                    id="flexCheckChecked"
-                    checked
+                    id="checkedCoffe"
                   />
 
                   <label
                     class="form-check-label d-flex align-items-center"
-                    for="flexCheckChecked"
+                    for="checkedCoffe"
                   >
                     <strong>Kaffe och fika </strong>
                     <span class="ms-2"><em>(efter hoppet)</em></span>
-                    <span id="coffePrice" class="ms-2 text-muted">50 kr</span>
+                    <span id="coffePrice" class="ms-2 text-muted"></span>
                   </label>
                 </div>
                 <div class="form-check">
@@ -142,13 +141,12 @@
                     class="form-check-input"
                     type="checkbox"
                     value=""
-                    id="flexCheckChecked"
-                    checked
+                    id="checkedInsurance"
                   />
 
                   <label
                     class="form-check-label d-flex align-items-center"
-                    for="flexCheckChecked"
+                    for="checkedInsurance"
                   >
                     <strong>Livförsäkring</strong>
                     <span id="insurancePrice" class="ms-2 text-success"></span>
@@ -156,8 +154,12 @@
                   </label>
                 </div>
               </div>
+              <div class="d-flex container border">
+                <label>Total Cost: <span id="totalPackagePrice"></span></label>
+              </div>
               <div class="modal-footer">
                 <button
+                  id="cancelAirPackage"
                   type="button"
                   class="btn btn-secondary"
                   data-bs-dismiss="modal"
@@ -213,7 +215,8 @@
         </div>
       </div>
     </div>
-    <script src="/script.js"></script>
+    <script src="/Scripts/Products.js"></script>
+    <script src="/Scripts/Navbar.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

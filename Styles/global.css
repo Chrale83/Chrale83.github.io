@@ -19,3 +19,10 @@ body {
 .customFontText {
     font-family: 'Roboto', sans-serif;
 }
+
+#packagePrice {
+    font-size: 12px;
+    /* margin-top: 6px;
+    margin-left: 100px; */
+    font-style: italic;
+}
