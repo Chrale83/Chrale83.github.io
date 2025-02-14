@@ -24,6 +24,7 @@ cancelAirPackage.addEventListener("click", function () {
 document.querySelectorAll(".dropdown-item").forEach((item) => {
   item.addEventListener("click", function () {
     countPeople = parseInt(this.getAttribute("data-value"));
+    ChangePassangerAmount(countPeople);
     console.log(countPeople);
 
     SetCoffePrice();
@@ -32,6 +33,11 @@ document.querySelectorAll(".dropdown-item").forEach((item) => {
     totalPackagePrice = AirPlanePackagePrice * countPeople;
   });
 });
+
+function ChangePassangerAmount(chosenAmountPeople) {
+  document.getElementById("selectedAmountPerson").textContent =
+    chosenAmountPeople;
+}
 
 function clearInputs() {
   countPeople = 1;
