@@ -1,8 +1,8 @@
-let countPeople = 1;
 const AirPlanePackagePrice = 1000;
 const coffePrice = 10;
 const parachutePrice = 10;
 const insurancePrice = 10;
+let countPeople = null;
 
 let totalPackagePrice = 0;
 
