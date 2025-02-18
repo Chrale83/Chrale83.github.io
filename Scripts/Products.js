@@ -39,10 +39,11 @@ function ChangePassangerQuantity(selectedQuantityPeople) {
 // Kod inuti modalen
 
 function clearInputs() {
+  document.getElementById("selectAirPackage").disabled = true;
+  ChangePassangerQuantity(null);
   countPeople = null;
-  totalPackagePrice = 0;
+  totalPackagePrice = AirPlanePackagePrice;
   isExtraParachuteChecked.checked = false;
   isCoffeChecked.checked = false;
   isInsuranceChecked.checked = false;
-  document.getElementById("selectAirPackage").disabled = false;
 }
