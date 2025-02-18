@@ -41,26 +41,56 @@
                     aria-expanded="false"
                   >
                     Antal personer:
-                    <span id="selectedAmountPerson" class="ms-2"></span>
+                    <span id="selectedAmountPersonAirPlane" class="ms-2"></span>
                   </button>
                   <ul
                     class="dropdown-menu"
                     aria-labelledby="dropdownMenuButton"
                   >
                     <li>
-                      <a class="dropdown-item" data-value="1" href="#">1</a>
+                      <a
+                        class="dropdown-item"
+                        data-value="1"
+                        href="#"
+                        data-dropdown="airPlane"
+                        >1</a
+                      >
                     </li>
                     <li>
-                      <a class="dropdown-item" data-value="2" href="#">2</a>
+                      <a
+                        class="dropdown-item"
+                        data-value="2"
+                        href="#"
+                        data-dropdown="airPlane"
+                        >2</a
+                      >
                     </li>
                     <li>
-                      <a class="dropdown-item" data-value="3" href="#">3</a>
+                      <a
+                        class="dropdown-item"
+                        data-value="3"
+                        href="#"
+                        data-dropdown="airPlane"
+                        >3</a
+                      >
                     </li>
                     <li>
-                      <a class="dropdown-item" data-value="4" href="#">4</a>
+                      <a
+                        class="dropdown-item"
+                        data-value="4"
+                        href="#"
+                        data-dropdown="airPlane"
+                        >4</a
+                      >
                     </li>
                     <li>
-                      <a class="dropdown-item" data-value="5" href="#">5</a>
+                      <a
+                        class="dropdown-item"
+                        data-value="5"
+                        href="#"
+                        data-dropdown="airPlane"
+                        >5</a
+                      >
                     </li>
                   </ul>
                 </div>
@@ -69,7 +99,7 @@
                   type="button"
                   class="btn btn-primary ms-2 w-100"
                   data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
+                  data-bs-target="#staticBackdrop-AirPlane"
                   disabled
                 >
                   Välj
@@ -82,7 +112,7 @@
         <!-- Modal för Flygplan paket -->
         <div
           class="modal fade"
-          id="staticBackdrop"
+          id="staticBackdrop-AirPlane"
           data-bs-backdrop="static"
           data-bs-keyboard="false"
           tabindex="-1"
@@ -108,7 +138,7 @@
                   <table class="table table-striped">
                     <thead class="table-dark">
                       <tr>
-                        <th>Valfritt</th>
+                        <th class="col-1">Valfritt</th>
                         <th>Tillval</th>
                         <th>Pris</th>
                       </tr>
@@ -124,22 +154,36 @@
                         </td>
                         <td>Extra Fallskärm</td>
                         <td>
-                          <span id="parachutePrice"></span>
+                          <span id="parachutePrice">0kr</span>
                         </td>
                       </tr>
                       <tr>
+                        <td>
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="includeCoffeeCheckbox"
+                          />
+                        </td>
                         <td>Kaffe & Fika</td>
-                        <td>Kaffe & Fika</td>
-                        <td>100 kr</td>
+                        <td>
+                          <span id="CoffePrice">0kr</span>
+                        </td>
                       </tr>
                       <tr>
+                        <td>
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="LifeInsuranceCheckbox"
+                          />
+                        </td>
                         <td>Livförsäkring</td>
-                        <td>Livförsäkring</td>
-                        <td>500 kr</td>
+                        <td><span id="insurancePrice">0kr</span></td>
                       </tr>
                       <tr>
                         <td></td>
-                        <td></td>
+                        <td class="text-end">Totalt:</td>
                         <td><span id="totalPackagePrice"></span></td>
                       </tr>
                     </tbody>
@@ -169,18 +213,193 @@
         <!-- Produkt andra paketet -->
         <div class="col mt-3">
           <div class="card" style="width: 18rem">
-            <img src="..." class="card-img-top" alt="..." />
+            <img src="/Images/Jumper.webp" class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Ballong paketet</h5>
+
               <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Välj detta om du vill hoppa från en ballong... Classic
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <div class="d-flex justify-content-start">
+                <span id="packagePrice" class="ms-auto">1500kr p/p</span>
+              </div>
+              <div class="d-flex">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-primary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Antal personer:
+                    <span id="selectedAmountPersonBallon" class="ms-2"></span>
+                  </button>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        data-value="1"
+                        href="#"
+                        data-dropdown="ballon"
+                        >1</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        data-value="2"
+                        href="#"
+                        data-dropdown="ballon"
+                        >2</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        data-value="3"
+                        href="#"
+                        data-dropdown="ballon"
+                        >3</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        data-value="4"
+                        href="#"
+                        data-dropdown="ballon"
+                        >4</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        data-value="5"
+                        href="#"
+                        data-dropdown="ballon"
+                        >5</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <button
+                  id="selectBallonPackage"
+                  type="button"
+                  class="btn btn-primary ms-2 w-100"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop-ballon"
+                  disabled
+                >
+                  Välj
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
+        <div
+          class="modal fade"
+          id="staticBackdrop-ballon"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title fs-3" id="staticBackdropLabel">
+                  Ballong Paket
+                </h2>
+
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="table-responsive mt-3">
+                  <table class="table table-striped">
+                    <thead class="table-dark">
+                      <tr>
+                        <th class="col-1">Valfritt</th>
+                        <th>Tillval</th>
+                        <th>Pris</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="CheckedExtraParachute"
+                          />
+                        </td>
+                        <td>Extra Fallskärm</td>
+                        <td>
+                          <span id="parachutePrice">0kr</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="includeCoffeeCheckbox"
+                          />
+                        </td>
+                        <td>Kaffe & Fika</td>
+                        <td>
+                          <span id="CoffePrice">0kr</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="LifeInsuranceCheckbox"
+                          />
+                        </td>
+                        <td>Livförsäkring</td>
+                        <td><span id="insurancePrice">0kr</span></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td class="text-end">Totalt:</td>
+                        <td><span id="totalPackagePrice"></span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button
+                  id="cancelAirPackage"
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Understood
+                </button>
+              </div>
+
+              <!-- kdksd -->
+            </div>
+          </div>
+        </div>
         <div class="col mt-3">
           <div class="card" style="width: 18rem">
             <img src="" class="card-img-top" alt="..." />
