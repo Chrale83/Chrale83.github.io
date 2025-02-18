@@ -1,4 +1,4 @@
-const AirPlanePackagePrice = 12500;
+const AirPlanePackagePrice = 1250;
 const coffePrice = 10;
 const parachutePrice = 20;
 const insurancePrice = 30;
