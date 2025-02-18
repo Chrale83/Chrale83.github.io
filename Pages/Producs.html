@@ -104,63 +104,49 @@
                 ></button>
               </div>
               <div class="modal-body">
-                <!-- checkboxarna -->
-
-                <div class="container"></div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="CheckedExtraParachute"
-                  />
-
-                  <label
-                    class="form-check-label d-flex align-items-center"
-                    for="CheckedExtraParachute"
-                  >
-                    <strong>Extra fallskärm</strong>
-                    <span id="parachutePrice" class="ms-2 text-muted"></span>
-                  </label>
-                </div>
-
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="checkedCoffe"
-                  />
-
-                  <label
-                    class="form-check-label d-flex align-items-center"
-                    for="checkedCoffe"
-                  >
-                    <strong>Kaffe och fika </strong>
-                    <span class="ms-2"><em>(efter hoppet)</em></span>
-                    <span id="coffePrice" class="ms-2 text-muted"></span>
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="checkedInsurance"
-                  />
-
-                  <label
-                    class="form-check-label d-flex align-items-center"
-                    for="checkedInsurance"
-                  >
-                    <strong>Livförsäkring</strong>
-                    <span id="insurancePrice" class="ms-3 text-success"></span>
-                    <span class="ms-2 small">kr</span>
-                  </label>
+                <div class="table-responsive mt-3">
+                  <table class="table table-striped">
+                    <thead class="table-dark">
+                      <tr>
+                        <th>Valfritt</th>
+                        <th>Tillval</th>
+                        <th>Pris</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="CheckedExtraParachute"
+                          />
+                        </td>
+                        <td>Extra Fallskärm</td>
+                        <td>
+                          <span id="parachutePrice">5</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Kaffe & Fika</td>
+                        <td>Kaffe & Fika</td>
+                        <td>100 kr</td>
+                      </tr>
+                      <tr>
+                        <td>Livförsäkring</td>
+                        <td>Livförsäkring</td>
+                        <td>500 kr</td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td><span id="totalPackagePrice">2</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
-              <div class="d-flex container border">
-                <label>Total Cost: <span id="totalPackagePrice"></span></label>
-              </div>
+
               <div class="modal-footer">
                 <button
                   id="cancelAirPackage"
@@ -174,6 +160,8 @@
                   Understood
                 </button>
               </div>
+
+              <!-- kdksd -->
             </div>
           </div>
         </div>
@@ -199,20 +187,6 @@
             <div class="card-body">
               <h5 class="card-title">Flygplans paketet</h5>
               <p class="card-text">Välj detta om du vill hoppa flygplan</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col mt3">
-          <div class="card" style="width: 18rem">
-            <img src="" class="card-img-top mb-2" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
