@@ -33,7 +33,7 @@ document.getElementById("selectAirPackage").addEventListener("click", () => {
     CostPerPerson: costAirplanePack,
   };
   console.log(newPackage);
-
+  ShowOrderValidation();
   ClearAllInput();
   addToBasket(newPackage);
 });
@@ -64,7 +64,7 @@ document
       CostPerPerson: costBallonPack,
     };
     console.log(newPackage);
-
+    ShowOrderValidation();
     ClearAllInput();
     addToBasket(newPackage);
   });
@@ -97,9 +97,7 @@ document
     console.log(newPackage);
 
     ClearAllInput();
-    let toastElement = document.getElementById("toast");
-    let toast = new bootstrap.Toast(toastElement);
-    toast.show();
+    ShowOrderValidation();
     addToBasket(newPackage);
   });
 
@@ -118,4 +116,10 @@ function ClearAllInput() {
     selectedBalloonPack;
   document.getElementById("numPeopleAirplanePack").textContent =
     selectedAirplanePack;
+}
+
+function ShowOrderValidation() {
+  let toastElement = document.getElementById("toast");
+  let toast = new bootstrap.Toast(toastElement);
+  toast.show();
 }
