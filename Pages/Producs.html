@@ -15,6 +15,11 @@
   </head>
   <body>
     <div id="navbar-container"></div>
+    <div class="container">
+      <div class="card">
+        <p class="">Test</p>
+      </div>
+    </div>
 
     <!-- Produkt Flygplanpaket -->
     <div class="container">
@@ -41,26 +46,56 @@
                     aria-expanded="false"
                   >
                     Antal personer:
-                    <span id="selectedAmountPerson" class="ms-2"></span>
+                    <span id="selectedAmountPersonAirPlane" class="ms-2"></span>
                   </button>
                   <ul
                     class="dropdown-menu"
                     aria-labelledby="dropdownMenuButton"
                   >
                     <li>
-                      <a class="dropdown-item" data-value="1" href="#">1</a>
+                      <a
+                        class="dropdown-item"
+                        data-value="1"
+                        href="#"
+                        data-dropdown="airPlane"
+                        >1</a
+                      >
                     </li>
                     <li>
-                      <a class="dropdown-item" data-value="2" href="#">2</a>
+                      <a
+                        class="dropdown-item"
+                        data-value="2"
+                        href="#"
+                        data-dropdown="airPlane"
+                        >2</a
+                      >
                     </li>
                     <li>
-                      <a class="dropdown-item" data-value="3" href="#">3</a>
+                      <a
+                        class="dropdown-item"
+                        data-value="3"
+                        href="#"
+                        data-dropdown="airPlane"
+                        >3</a
+                      >
                     </li>
                     <li>
-                      <a class="dropdown-item" data-value="4" href="#">4</a>
+                      <a
+                        class="dropdown-item"
+                        data-value="4"
+                        href="#"
+                        data-dropdown="airPlane"
+                        >4</a
+                      >
                     </li>
                     <li>
-                      <a class="dropdown-item" data-value="5" href="#">5</a>
+                      <a
+                        class="dropdown-item"
+                        data-value="5"
+                        href="#"
+                        data-dropdown="airPlane"
+                        >5</a
+                      >
                     </li>
                   </ul>
                 </div>
@@ -69,7 +104,7 @@
                   type="button"
                   class="btn btn-primary ms-2 w-100"
                   data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
+                  data-bs-target="#staticBackdrop-AirPlane"
                   disabled
                 >
                   Välj
@@ -82,7 +117,7 @@
         <!-- Modal för Flygplan paket -->
         <div
           class="modal fade"
-          id="staticBackdrop"
+          id="staticBackdrop-AirPlane"
           data-bs-backdrop="static"
           data-bs-keyboard="false"
           tabindex="-1"
@@ -104,96 +139,225 @@
                 ></button>
               </div>
               <div class="modal-body">
-                <div class="table-responsive mt-3">
-                  <table class="table table-striped">
-                    <thead class="table-dark">
-                      <tr>
-                        <th>Valfritt</th>
-                        <th>Tillval</th>
-                        <th>Pris</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="CheckedExtraParachute"
-                          />
-                        </td>
-                        <td>Extra Fallskärm</td>
-                        <td>
-                          <span id="parachutePrice">5</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Kaffe & Fika</td>
-                        <td>Kaffe & Fika</td>
-                        <td>100 kr</td>
-                      </tr>
-                      <tr>
-                        <td>Livförsäkring</td>
-                        <td>Livförsäkring</td>
-                        <td>500 kr</td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td><span id="totalPackagePrice">2</span></td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div>
+                  <p>
+                    Ett fallskärmpaket består av all utrustning som krävs för
+                    ett säkert och kontrollerat fallskärmshopp. Det inkluderar
+                    en huvudfallskärm, en reservfallskärm och en automatiskt
+                    utlösande säkerhetsanordning (AAD). Fallskärmarna är packade
+                    i en sele och container, designade för att ge maximal
+                    komfort och funktionalitet. Oavsett om du är nybörjare eller
+                    erfaren hoppare är ett välunderhållet fallskärmpaket
+                    avgörande för en trygg upplevelse i luften.
+                  </p>
+                </div>
+                <div class="container">
+                  <div class="row">
+                    <div class="col text-end">
+                      Total Kostnad
+                      <span class="ms-1" id="totalPriceAirPlane"></span
+                      ><span class="ms-1">Kr</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div class="modal-footer">
                 <button
-                  id="cancelAirPackage"
+                  id="cancelPackage-Airplane"
                   type="button"
                   class="btn btn-secondary"
                   data-bs-dismiss="modal"
                 >
                   Close
                 </button>
-                <button type="button" class="btn btn-primary">
-                  Understood
+                <button
+                  type="button"
+                  id="addPackage-Airplane"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                >
+                  Lägg till
                 </button>
               </div>
 
-              <!-- kdksd -->
+              
             </div>
           </div>
         </div>
+<!-- ----------------------- -->
 
-        <!-- Produkt andra paketet -->
-        <div class="col mt-3">
-          <div class="card" style="width: 18rem">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+<!-- Produkt Ballongpaket -->
+<div class="container">
+  <div class="row">
+    <div class="col mt-3">
+      <div class="card" style="width: 18rem">
+        <img src="/Images/jumper4.webp" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Ballong paketet</h5>
+
+          <p class="card-text">
+            Välj detta om du vill hoppa från en ballong... nej nej
+          </p>
+          <div class="d-flex justify-content-start">
+            <span id="packagePriceBallon" class="ms-auto">1750kr p/p</span>
           </div>
-        </div>
-
-        <div class="col mt-3">
-          <div class="card" style="width: 18rem">
-            <img src="" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Flygplans paketet</h5>
-              <p class="card-text">Välj detta om du vill hoppa flygplan</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="d-flex">
+            <div class="dropdown">
+              <button
+                class="btn btn-primary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Antal personer:
+                <span id="selectedAmountPersonBallon" class="ms-2"></span>
+              </button>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <li>
+                  <a
+                    class="dropdown-item"
+                    data-value="1"
+                    href="#"
+                    data-dropdown="ballon"
+                    >1</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    data-value="2"
+                    href="#"
+                    data-dropdown="ballon"
+                    >2</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    data-value="3"
+                    href="#"
+                    data-dropdown="ballon"
+                    >3</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    data-value="4"
+                    href="#"
+                    data-dropdown="ballon"
+                    >4</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    data-value="5"
+                    href="#"
+                    data-dropdown="ballon"
+                    >5</a
+                  >
+                </li>
+              </ul>
             </div>
+            <button
+              id="selectBallonPackage"
+              type="button"
+              class="btn btn-primary ms-2 w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop-Ballon"
+              disabled
+            >
+              Välj
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <script src="/Scripts/Products.js"></script>
+
+    <!-- Modal för ballong paket -->
+    <div
+      class="modal fade"
+      id="staticBackdrop-Ballon"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-3" id="staticBackdropLabel">
+              Ballong paketet
+            </h2>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <p>
+                Ett Ballongpaket består av all utrustning som krävs för
+                ett säkert och kontrollerat fallskärmshopp. Det inkluderar
+                en huvudfallskärm, en reservfallskärm och en automatiskt
+                utlösande säkerhetsanordning (AAD). Fallskärmarna är packade
+                i en sele och container, designade för att ge maximal
+                komfort och funktionalitet. Oavsett om du är nybörjare eller
+                erfaren hoppare är ett välunderhållet fallskärmpaket
+                avgörande för en trygg upplevelse i luften.
+              </p>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col text-end">
+                  Total Kostnad
+                  <span class="ms-1" id="totalPriceBallon"></span
+                  ><span class="ms-1">Kr</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              id="ancelPackage-Ballon"
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              id="addPackage-Ballon"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Lägg till
+            </button>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+       
+        
+      </div>
+    </div>
+    <script type="module" src="/Scripts/Basket.js"></script>
+    <script type="module" src="/Scripts/Products.js"></script>
     <script src="/Scripts/Navbar.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
