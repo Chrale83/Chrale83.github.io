@@ -1,72 +1,121 @@
 import { addToBasket } from "./Basket.js";
 
-const AirPlanePackagePrice = 1250;
-const BallonPackagePrice = 2500;
+const costAirplanePack = 1250;
+const costBallonPack = 1450;
+const costSpaceshipPack = 500000;
 
-let numberOfPeopleSelectedAirPlane = null;
-let totalPackagePriceAirplane = 0;
+let selectedAirplanePack = null;
+let selectedBalloonPack = null;
+let selectedSpaceshipPack = null;
 
-let totalPriceAirPlaneElement = document.getElementById("totalPriceAirPlane");
-let cancelPackageAirplane = document.getElementById("cancelPackage-Airplane");
-let selectPackageAirplane = document.getElementById("selectAirPackage");
-let addPackageAirplane = document.getElementById("addPackage-Airplane");
+//FLYGPLAN PAKET-----------------------------------
 
-document.querySelectorAll(".dropdown-item").forEach((item) => {
-  item.addEventListener("click", function () {
-    numberOfPeopleSelectedAirPlane = parseInt(this.getAttribute("data-value"));
+const airplaneOptions = document.querySelectorAll(
+  "#dropdownMenuButton + .dropdown-menu .dropdown-item"
+);
+airplaneOptions.forEach((option) => {
+  option.addEventListener("click", function (e) {
+    selectedAirplanePack = e.target.getAttribute("data-value");
 
-    const dropDownId = this.getAttribute("data-dropdown");
+    document.getElementById("numPeopleAirplanePack").textContent =
+      selectedAirplanePack;
 
     document.getElementById("selectAirPackage").disabled = false;
-    ChangePassangerQuantity(
-      numberOfPeopleSelectedAirPlane,
-      "selectedAmountPersonAirPlane"
-    );
   });
 });
 
-cancelPackageAirplane.addEventListener("click", function () {
-  clearInputs();
-});
-
-selectPackageAirplane.addEventListener("click", () => {
-  let personText = "";
-
-  if (numberOfPeopleSelectedAirPlane > 1) {
-    personText = " personer: ";
-  } else {
-    personText = " person: ";
-  }
-  totalPackagePriceAirplane +=
-    AirPlanePackagePrice * numberOfPeopleSelectedAirPlane;
-  totalPriceAirPlaneElement.textContent =
-    "för " +
-    numberOfPeopleSelectedAirPlane +
-    personText +
-    totalPackagePriceAirplane;
-});
-
-addPackageAirplane.addEventListener("click", () => {
+document.getElementById("selectAirPackage").addEventListener("click", () => {
   let newPackage = {
     id: crypto.randomUUID(),
     name: "Flygplanspaket",
-    numberOfPeople: numberOfPeopleSelectedAirPlane,
-    packageCost: totalPackagePriceAirplane,
-    CostPerPerson: AirPlanePackagePrice,
+    numberOfPeople: selectedAirplanePack,
+    packageCost: selectedAirplanePack * costAirplanePack,
+    CostPerPerson: costAirplanePack,
   };
-  clearInputs();
+  console.log(newPackage);
+
+  ClearAllInput();
   addToBasket(newPackage);
 });
+// BALLONGPAKET -----------------------------------
 
-function ChangePassangerQuantity(selectedQuantityPeople, elementId) {
-  document.getElementById(elementId).textContent = selectedQuantityPeople;
-}
+const balloonOptions = document.querySelectorAll(
+  "#dropdownMenuButtonBalloon + .dropdown-menu .dropdown-item"
+);
+balloonOptions.forEach((option) => {
+  option.addEventListener("click", function (e) {
+    selectedBalloonPack = e.target.getAttribute("data-value");
 
-function clearInputs() {
+    document.getElementById("numPeopleBalloonPack").textContent =
+      selectedBalloonPack;
+
+    document.getElementById("selectBalloonPackage").disabled = false;
+  });
+});
+
+document
+  .getElementById("selectBalloonPackage")
+  .addEventListener("click", () => {
+    let newPackage = {
+      id: crypto.randomUUID(),
+      name: "BallongPaketet",
+      numberOfPeople: selectedBalloonPack,
+      packageCost: selectedBalloonPack * costBallonPack,
+      CostPerPerson: costBallonPack,
+    };
+    console.log(newPackage);
+
+    ClearAllInput();
+    addToBasket(newPackage);
+  });
+// RYMDSKEPPS PAKET -------------------------------------------
+
+const spaceshipOptions = document.querySelectorAll(
+  "#dropdownMenuButtonSpaceship + .dropdown-menu .dropdown-item"
+);
+spaceshipOptions.forEach((option) => {
+  option.addEventListener("click", function (e) {
+    selectedSpaceshipPack = e.target.getAttribute("data-value");
+
+    document.getElementById("numPeopleSpaceshipPack").textContent =
+      selectedSpaceshipPack;
+
+    document.getElementById("selectSpaceshipPackage").disabled = false;
+  });
+});
+
+document
+  .getElementById("selectSpaceshipPackage")
+  .addEventListener("click", () => {
+    let newPackage = {
+      id: crypto.randomUUID(),
+      name: "Rumdskepps paketet",
+      numberOfPeople: selectedSpaceshipPack,
+      packageCost: selectedSpaceshipPack * costSpaceshipPack,
+      CostPerPerson: costSpaceshipPack,
+    };
+    console.log(newPackage);
+
+    ClearAllInput();
+    let toastElement = document.getElementById("toast");
+    let toast = new bootstrap.Toast(toastElement);
+    toast.show();
+    addToBasket(newPackage);
+  });
+
+//--- EXTRA LOGIK
+
+function ClearAllInput() {
+  document.getElementById("selectSpaceshipPackage").disabled = true;
+  document.getElementById("selectBalloonPackage").disabled = true;
   document.getElementById("selectAirPackage").disabled = true;
-  ChangePassangerQuantity(0, "selectedAmountPersonAirPlane");
-
-  numberOfPeopleSelectedAirPlane = 0;
-  totalPriceAirPlaneElement.textContent = 0;
-  totalPackagePriceAirplane = 0;
+  selectedAirplanePack = 0;
+  selectedBalloonPack = 0;
+  selectedSpaceshipPack = 0;
+  document.getElementById("numPeopleSpaceshipPack").textContent =
+    selectedSpaceshipPack;
+  document.getElementById("numPeopleBalloonPack").textContent =
+    selectedBalloonPack;
+  document.getElementById("numPeopleAirplanePack").textContent =
+    selectedAirplanePack;
 }
