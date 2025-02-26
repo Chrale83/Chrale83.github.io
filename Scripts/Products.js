@@ -9,7 +9,7 @@ let totalPackagePriceAirplane = 0;
 let totalPriceAirPlaneElement = document.getElementById("totalPriceAirPlane");
 let cancelPackageAirplane = document.getElementById("cancelPackage-Airplane");
 let selectPackageAirplane = document.getElementById("selectAirPackage");
-let addPackageAirplane = document.getElementById("addPackage-AirPlane");
+let addPackageAirplane = document.getElementById("addPackage-Airplane");
 
 document.querySelectorAll(".dropdown-item").forEach((item) => {
   item.addEventListener("click", function () {
@@ -48,12 +48,13 @@ selectPackageAirplane.addEventListener("click", () => {
 
 addPackageAirplane.addEventListener("click", () => {
   let newPackage = {
+    id: crypto.randomUUID(),
     name: "Flygplanspaket",
     numberOfPeople: numberOfPeopleSelectedAirPlane,
     packageCost: totalPackagePriceAirplane,
     CostPerPerson: AirPlanePackagePrice,
   };
-
+  clearInputs();
   addToBasket(newPackage);
 });
 
