@@ -23,7 +23,15 @@
             <div class="card-body">
               <h5 class="card-title">Flygplans paket</h5>
               <p class="card-text">
-                Beskrivning av ett paket som är fallskärm hopp från ett flygplan
+                Beskrivning av ett paket som är fallskärm hopp från ett
+                flygplan<br /><span
+                  class="text-primary"
+                  style="cursor: pointer"
+                  data-bs-toggle="modal"
+                  data-bs-target="#infoAirplaneModal"
+                >
+                  Visa mer information
+                </span>
               </p>
               <div class="d-flex justify-content-between">
                 <div class="dropdown">
@@ -81,7 +89,14 @@
               <h5 class="card-title">Ballong Paketet</h5>
               <p class="card-text">
                 Beskrivning av ett paket som är fallskärm hopp från ett
-                luftballong
+                luftballong<br /><span
+                  class="text-primary"
+                  style="cursor: pointer"
+                  data-bs-toggle="modal"
+                  data-bs-target="#infoBallonModal"
+                >
+                  Visa mer information
+                </span>
               </p>
               <div class="d-flex justify-content-between">
                 <div class="dropdown ms-3">
@@ -143,7 +158,14 @@
               <h5 class="card-title">Rymdskepp paketet</h5>
               <p class="card-text">
                 Beskrivning av ett paket som är fallskärm hopp från ett
-                rymdskepp
+                rymdskepp<br /><span
+                  class="text-primary"
+                  style="cursor: pointer"
+                  data-bs-toggle="modal"
+                  data-bs-target="#infoSpaceshipModal"
+                >
+                  Visa mer information
+                </span>
               </p>
               <div class="d-flex justify-content-between">
                 <div class="dropdown ms-3">
@@ -188,6 +210,133 @@
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal för Flygplan -->
+
+    <div
+      class="modal fade"
+      id="infoAirplaneModal"
+      tabindex="-1"
+      aria-labelledby="modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">
+              Flygplanshoppet - Klassiker för Adrenalinsökare
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Stäng"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Det här är fallskärmshoppning i dess renaste form! Du kliver ombord
+            på vårt specialanpassade hoppflygplan och stiger till 4 000 meters
+            höjd, där instruktören räknar ner: 3...2...1... HOPPA! Vindbruset,
+            den fria farten och den oslagbara känslan av att flyga genom luften
+            är något du aldrig glömmer.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Stäng
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal för Ballong -->
+
+    <div
+      class="modal fade"
+      id="infoBallonModal"
+      tabindex="-1"
+      aria-labelledby="modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">
+              Ballonghoppet - För Poeter och Våghalsar
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Stäng"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Om du vill kombinera spänning med stillhet, då är Ballonghoppet
+            något för dig! Vi svävar majestätiskt upp över landskapet i en
+            färgsprakande luftballong, där du får njuta av tystnaden och
+            utsikten innan det är dags att hoppa. Från 6 000 meters höjd kastar
+            du dig ut i en långsam, svävande känsla innan fallskärmen vecklar ut
+            sig.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Stäng
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal för rymdskepp -->
+
+    <div
+      class="modal fade"
+      id="infoSpaceshipModal"
+      tabindex="-1"
+      aria-labelledby="modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">
+              Rymdhoppet - För den Ultimata Adrenalinkicken!
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Stäng"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Har du någonsin drömt om att kasta dig ut i det okända? Nu har du
+            chansen! Med vårt exklusiva "Rymdhopp" blir du upphissad till
+            stratosfären ombord på vårt toppmoderna rymdskepp SkyFall One. Från
+            40 000 meters höjd öppnar sig rymden framför dig, och när du tar
+            steget ut upplever du några sekunder av tyngdlöshet innan du faller
+            tillbaka mot jorden i en hisnande hastighet.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Stäng
+            </button>
           </div>
         </div>
       </div>
