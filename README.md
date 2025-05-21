@@ -1,2 +1,2 @@
 # Labb1_Web
- First labb in Webb course
+ First labb in Web course
